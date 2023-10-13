@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :post_images, dependent: :destroy
-
+  has_many :post_comments, dependent: :destroy #1のデータが削除されたらNのデータも削除される記述
   has_one_attached :profile_image
 
   def get_profile_image(width, height)
